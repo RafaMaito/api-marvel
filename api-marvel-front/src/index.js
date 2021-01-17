@@ -39,10 +39,10 @@ class App {
 
     data.forEach((item) => {
       if (item.thumbnail.path.includes('image_not_available')) {
-        const tr = `<input type="image" class="img-button" width="100" data-id="${item.id}" src="./img/marvel_logo.jpg">`;
+        const tr = `<input type="image" class="img-button" width="100" data-id="${item.id}" title="${item.name}" src="./img/marvel_logo.jpg">`;
         this.charContent.innerHTML += tr;
       } else {
-        const tr = `<input type="image" class="img-button" width="100" data-id="${item.id}"src="${item.thumbnail.path}.${item.thumbnail.extension}">`;
+        const tr = `<input type="image" class="img-button" width="100" data-id="${item.id}" title="${item.name}" src="${item.thumbnail.path}.${item.thumbnail.extension}">`;
         this.charContent.innerHTML += tr;
       }
     });
