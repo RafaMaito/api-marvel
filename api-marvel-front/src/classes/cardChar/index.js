@@ -19,14 +19,14 @@ export default class CardChar {
     const comDes = this.hasComicsDescription(comics, description);
     output = `<div class="col-12 d-flex" >
                                 <div>
-                                    <img src="${hasImg}"  width="800" alt="...">
+                                    <img src="${hasImg}" class="box box2" width="800" alt="...">
                                 </div>
-                                <div class="card-body">
-                                  <h5 class="card-title">${this.name}</h5>
-                                  <p><span class="fw-bold">Description: </span>${comDes.description}</p>
+                                <div class="card-body boxtext box box4 h-100 mt-2 mt-lg-0">
+                                  <p><h5 class="card-title ml-3 mt-3 fw-bold">${this.name}</h5></p>
+                                  <p><span class="fw-bold">Description: </span class="box">${comDes.description}</p>
                                   <p class="fw-bold">Comics:</p>
-                                  <ul>${comDes.comics}</ul>
-                                  <a href="http://localhost:8080" class="btn btn-primary">Back</a>
+                                  <ul class="box">${comDes.comics}</ul>
+                                  <a href="http://localhost:8080" class="btn btn-primary box0">Back</a>
                                 </div>
                               </div>`;
 

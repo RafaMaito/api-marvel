@@ -18,9 +18,11 @@ class App {
   getCharacters() {
     this.urlBack(`http://localhost:3333/characters/${this.offset}`);
   }
+
   searchCharacter() {
     this.urlBack(`http://localhost:3333/characters/char/${this.name.value}`);
   }
+
   async urlBack(url) {
     try {
       const result = await axios.get(url);
@@ -50,6 +52,7 @@ class App {
       };
     }
   }
+
   paginate(total) {
     document.querySelector('.pagination').innerHTML = '';
     const pages = Math.ceil(total / 100);
