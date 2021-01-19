@@ -7,15 +7,16 @@ class CharController {
   async index(request, response) {
     try {
       const { offset } = request.params;
-      const result = await apiMarvel.get(
-        `/characters${hashKey}&limit=100&offset=${offset}`
-      );
+      const result = await apiMarvel.get(`/characters${hashKey}`, {
+        params: { limit: 100, offset: `${offset}` },
+      });
+
       return response.json({
         characters: result.data.data.results,
         total: result.data.data.total,
       });
     } catch (error) {
-      return response.status(400).json(error);
+      return response.status(error.status || 400).json(error.message);
     }
   }
 
@@ -23,9 +24,9 @@ class CharController {
     try {
       const { name } = request.params;
       const result = await apiMarvel.get(`/characters${hashKey}`, {
-        params: { name: `${name}` },
+        params: { limit: 100, nameStartsWith: `${name}` },
       });
-      return response.json(result.data.data.results);
+      return response.json(result.data.data);
     } catch (error) {
       return response.status(400).json(error);
     }
