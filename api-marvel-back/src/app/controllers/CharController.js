@@ -11,10 +11,7 @@ class CharController {
         params: { limit: 100, offset: `${offset}` },
       });
 
-      return response.json({
-        characters: result.data.data.results,
-        total: result.data.data.total,
-      });
+      return response.json(result.data.data);
     } catch (error) {
       return response.status(error.status || 400).json(error.message);
     }

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Char from './classes/char/';
 import CardChar from './classes/cardChar';
+
 class App {
   constructor() {
     this.offset = 0;
@@ -9,22 +10,19 @@ class App {
     this.buttonName = document.getElementById('button-name');
     this.buttonsEvent();
   }
+
   buttonsEvent() {
     this.buttonName.onclick = () => this.searchCharacter();
   }
-  async getCharacters() {
-    try {
-      const url = `http://localhost:3333/characters/${this.offset}`;
-      const result = await axios.get(url);
-      this.populate(result.data.characters);
-      this.paginate(result.data.total);
-    } catch (error) {
-      console.log(error);
-    }
+
+  getCharacters() {
+    this.urlBack(`http://localhost:3333/characters/${this.offset}`);
   }
-  async searchCharacter() {
+  searchCharacter() {
+    this.urlBack(`http://localhost:3333/characters/char/${this.name.value}`);
+  }
+  async urlBack(url) {
     try {
-      const url = `http://localhost:3333/characters/char/${this.name.value}`;
       const result = await axios.get(url);
       this.populate(result.data.results);
       this.paginate(result.data.total);
@@ -32,6 +30,7 @@ class App {
       console.log(error);
     }
   }
+
   populate(data) {
     this.charContent.innerHTML = '';
     data.forEach((item) => {
