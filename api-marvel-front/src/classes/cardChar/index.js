@@ -23,7 +23,7 @@ export default class CardChar {
                                 </div>
                                 <div class="card-body boxtext box box4 h-100 mt-2 mt-lg-0">
                                   <p><h5 class="card-title ml-3 mt-3 fw-bold">${this.name}</h5></p>
-                                  <p><span class="fw-bold">Description: </span class="box">${comDes.description}</p>
+                                  <p><span class="fw-bold">Description:</span><p>${comDes.description}</p></p>
                                   <p class="fw-bold">Comics:</p>
                                   <ul class="box">${comDes.comics}</ul>
                                   <a href="http://localhost:8080" class="btn btn-primary box0">Back</a>

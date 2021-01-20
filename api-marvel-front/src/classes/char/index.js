@@ -14,14 +14,9 @@ export default class Char {
     } else {
       hasImg = `${this.thumbnail.path}.${this.thumbnail.extension}`;
     }
-    newChar = `<div class="card box1 boxtext col-md-3 ">
-    <input type="image" class="img-button mt-3 box" width="100" data-id="${this.id}" title="${this.name}" src="${hasImg}">
+    newChar = `<div class="card box1 boxtext col-1">
+    <input type="image" class="img-button box" width="100" data-id="${this.id}" title="${this.name}" src="${hasImg}">
     </div>`;
     return newChar;
   }
 }
-
-// `<li class="card box1 boxtext col-md-3 ">
-//         <input type="image" class="img-responsive mt-3 box"  width="100" data-id="${this.id}"src="./img/marvel_logo.jpg">
-
-//         ;
