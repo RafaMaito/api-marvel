@@ -16,7 +16,7 @@ class App {
   }
 
   getCharacters() {
-    this.urlBack(`http://localhost:3333/characters/${this.offset}`);
+    this.urlBack(`http://localhost:3333/characters?offset=${this.offset}`);
   }
 
   searchCharacter() {

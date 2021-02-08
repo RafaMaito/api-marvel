@@ -6,7 +6,7 @@ const hashKey =
 class CharController {
   async index(request, response) {
     try {
-      const { offset } = request.params;
+      const { offset } = request.query;
       const result = await apiMarvel.get(`/characters${hashKey}`, {
         params: { limit: 100, offset: `${offset}` },
       });

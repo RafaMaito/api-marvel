@@ -6,6 +6,6 @@ import logRequestsMiddleware from './app/middleWares/logRequests';
 const routes = new Router();
 
 routes.use(logRequestsMiddleware);
-routes.get('/characters/:offset', CharController.index);
+routes.get('/characters', CharController.index);
 routes.get('/characters/char/:name', CharController.show);
 export default routes;
